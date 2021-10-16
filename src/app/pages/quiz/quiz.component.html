@@ -1,0 +1,47 @@
+
+<div class="box">
+    <div class="quiz-card-container">
+        <div class="quiz-card">
+            <div class="quiz-title">
+                <div class="title">
+                    {{quiz.title}} - <span class="category">{{quiz.category}}</span>
+                </div>
+                <div class="time">
+                    
+                </div>
+            </div>
+
+            <div class="quiz-question" >
+                {{quiz.questions[nQuestion].question}}
+            </div>
+            
+            <div class="quiz-answers">
+                <div class="quiz-answer-item" *ngFor="let answer of quiz.questions[nQuestion].answers">
+                    {{answer}}
+                </div>
+            </div>
+
+            <div class="quiz-footer">
+                <div class="text">
+                    {{nQuestion+1}} de {{nAllQuestions}} preguntas
+                </div>
+                <button class="btn" (click)="nextQuestion()">Siguiente</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--
+    <div class="content-container">
+    <div class="container">
+        <div class="quiz-card">
+            <div class="row main-description">
+                Entra para descubrir un quiz
+            </div>
+            <div class="row main-button">
+                <button class="btn btn-lg btn-primary">Jugar</button>
+            </div>
+        </div>
+    </div>
+</div>
+-->
