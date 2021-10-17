@@ -16,9 +16,23 @@
             </div>
             
             <div class="quiz-answers">
-                <div class="quiz-answer-item" *ngFor="let answer of quiz.questions[nQuestion].answers">
-                    {{answer}}
+                <div #answer0 class="quiz-answer-item" (click)="checkAnswer(0)" [ngClass]="{'hide-element': quiz.questions[nQuestion].answers.length<1}">
+                    {{quiz.questions[nQuestion].answers[0]}}
                 </div>
+                <div #answer0 class="quiz-answer-item" (click)="checkAnswer(1)" [ngClass]="{'hide-element': quiz.questions[nQuestion].answers.length<2}">
+                    {{quiz.questions[nQuestion].answers[1]}}
+                </div>
+                <div #answer0 class="quiz-answer-item" (click)="checkAnswer(2)" [ngClass]="{'hide-element': quiz.questions[nQuestion].answers.length<3}">
+                    {{quiz.questions[nQuestion].answers[2]}}
+                </div>
+                <div #answer0 class="quiz-answer-item" (click)="checkAnswer(3)" [ngClass]="{'hide-element': quiz.questions[nQuestion].answers.length<4}">
+                    {{quiz.questions[nQuestion].answers[3]}}
+                </div>
+                <div #answer0 class="quiz-answer-item" (click)="checkAnswer(4)" [ngClass]="{'hide-element': quiz.questions[nQuestion].answers.length<5}">
+                    {{quiz.questions[nQuestion].answers[4]}}
+                </div>
+                
+
             </div>
 
             <div class="quiz-footer">
