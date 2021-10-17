@@ -18,11 +18,11 @@ export class FileService {
                 "México","Estado de México", "Tenochtitlan", "Ciudad de México"
             ], 3),   
             new Question("¿Cuál es la capital de Corea del Sur?", [
-                "Oslo","Estambul", "Tokio", "Ciudad de Seúl"
+                "Oslo","Estambul", "Tokio", "Seúl"
             ], 3),   
             new Question("¿Cuál es la capital de Egipto?", [
                 "Egipto","El Cairo", "Guiza", "Nilo"
-            ], 3),   
+            ], 1),   
         ]),
         new Quiz("Hola mundo", "Aprendiendo",[
             new Question("¿Cuantos años tienes?", [

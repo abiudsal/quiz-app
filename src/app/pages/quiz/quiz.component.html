@@ -1,6 +1,6 @@
 
 <div class="box">
-    <div class="quiz-card-container">
+    <div class="quiz-card-container" *ngIf="!gameOver">
         <div class="quiz-card">
             <div class="quiz-title">
                 <div class="title">
@@ -19,16 +19,16 @@
                 <div #answer0 class="quiz-answer-item" (click)="checkAnswer(0)" [ngClass]="{'hide-element': quiz.questions[nQuestion].answers.length<1}">
                     {{quiz.questions[nQuestion].answers[0]}}
                 </div>
-                <div #answer0 class="quiz-answer-item" (click)="checkAnswer(1)" [ngClass]="{'hide-element': quiz.questions[nQuestion].answers.length<2}">
+                <div #answer1 class="quiz-answer-item" (click)="checkAnswer(1)" [ngClass]="{'hide-element': quiz.questions[nQuestion].answers.length<2}">
                     {{quiz.questions[nQuestion].answers[1]}}
                 </div>
-                <div #answer0 class="quiz-answer-item" (click)="checkAnswer(2)" [ngClass]="{'hide-element': quiz.questions[nQuestion].answers.length<3}">
+                <div #answer2 class="quiz-answer-item" (click)="checkAnswer(2)" [ngClass]="{'hide-element': quiz.questions[nQuestion].answers.length<3}">
                     {{quiz.questions[nQuestion].answers[2]}}
                 </div>
-                <div #answer0 class="quiz-answer-item" (click)="checkAnswer(3)" [ngClass]="{'hide-element': quiz.questions[nQuestion].answers.length<4}">
+                <div #answer3 class="quiz-answer-item" (click)="checkAnswer(3)" [ngClass]="{'hide-element': quiz.questions[nQuestion].answers.length<4}">
                     {{quiz.questions[nQuestion].answers[3]}}
                 </div>
-                <div #answer0 class="quiz-answer-item" (click)="checkAnswer(4)" [ngClass]="{'hide-element': quiz.questions[nQuestion].answers.length<5}">
+                <div #answer4 class="quiz-answer-item" (click)="checkAnswer(4)" [ngClass]="{'hide-element': quiz.questions[nQuestion].answers.length<5}">
                     {{quiz.questions[nQuestion].answers[4]}}
                 </div>
                 
@@ -42,6 +42,22 @@
                 <button class="btn" (click)="nextQuestion()">Siguiente</button>
             </div>
 
+        </div>
+    </div>
+    <div class="results-container" *ngIf="gameOver">
+        <div class="results-card">
+            <div class="result-title">
+                {{quiz.title}} - <span class="category">{{quiz.category}}</span>
+            </div>
+
+            <div class="result" >
+                {{hits}}/{{nAllQuestions}}
+            </div>
+            
+            <div class="result-footer">
+                <button class="btn" (click)="restart()">Reiniciar</button>
+                <button class="btn" (click)="explore()">Explorar</button>
+            </div>
         </div>
     </div>
 </div>
