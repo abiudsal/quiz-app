@@ -5,12 +5,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { QuizComponent } from './pages/quiz/quiz.component';
+import { CreateQuizComponent } from './pages/create-quiz/create-quiz.component';
 
 const routes: Routes = [
   {path: "", component: MainLayoutComponent, children: [
     {path: "", component: HomeComponent},
     {path: "categorias", component: CategoriesComponent},
     {path: "quiz/:id", component: QuizComponent},
+    {path: "crear", component: CreateQuizComponent},
     {path: "*", component: ErrorComponent},
   ]}
 ];

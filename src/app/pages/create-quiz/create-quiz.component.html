@@ -1,0 +1,36 @@
+<div class="box">
+    <div class="container">
+        <div class="title">
+            Crear un quiz
+        </div>
+        
+
+        <form>
+            <div class="form-group">
+                <label for="category">Categoría</label>
+                <select class="form-control" (change)="onChange($event)">
+                    <option *ngFor="let category of categories" [value]="category">
+                        {{category}}
+                    </option>
+                </select>
+            </div> 
+
+            <div class="form-group">
+                <label for="name">Nombre del Quiz</label>
+                <input name="name" [(ngModel)]="name" type="text" class="form-control" placeholder="Nombre">
+            </div>                          
+            
+            <div class="form-group question" *ngFor="let question of questions; index as i">
+                <label for="question">Pregunta {{i+1}}</label>
+                <input name="question" [(ngModel)]="name" type="text" class="form-control">                
+            </div>                                      
+            
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="addQuestion()"> + Añadir Pregunta</button>
+            </div>                                      
+        </form>
+
+    </div>
+    <br>
+</div>
+

@@ -6,8 +6,54 @@ import { Quiz } from '../models/Quiz';
   providedIn: 'root'
 })
 export class FileService {
-    public categories = ["Geografía", "Historia Universal", "Español", "Matemáticas", "Arte"];
-    public quiz = [
+    public categories = []
+    public quiz = []
+
+    constructor() { 
+        //this.saveInLocalStorage()
+        //localStorage.getItem("categories")
+        //localStorage.getItem("quizzes")
+        this.getLocalStorage()
+    }
+
+
+    get(id: number){
+        return Object.assign({}, this.quiz[id]);
+    }
+  
+    getAll(){
+        return [...this.quiz];
+    }
+    
+    getAllCategories(){
+        return [...this.categories];
+    }
+
+    getAllCategoriesSorted(){
+        let temp = [...this.categories];
+
+        temp = temp.sort((a:string, b:string) =>{
+            if(a < b) { return -1; }
+            if(a > b) { return 1; }
+            return 0;
+        })
+
+        return temp;
+    }
+
+    saveInLocalStorage(){
+        localStorage.setItem("categories", JSON.stringify(this.categories))
+        localStorage.setItem("quizzes", JSON.stringify(this.quiz))
+    }
+
+    getLocalStorage(){
+        this.categories = JSON.parse(localStorage.getItem("categories") || "")
+        this.quiz = JSON.parse(localStorage.getItem("quizzes") || "")
+    }
+}
+
+/*
+[
         new Quiz("Capitales", "Geografía",[
             new Question("¿Cuál es la capital de Argentina?", [
                 "Buenos Aires","Argentina", "Tabasco", "Montevideo"
@@ -88,36 +134,9 @@ export class FileService {
             new Question("¿Cuál es la capital de Egipto?", [
                 "Egipto","El Cairo", "Guiza", "Nilo"
             ], 1),   
-        ]),
-        
+        ]),        
     ]
 
-    constructor() { 
-        
-    }
 
-
-    get(id: number){
-        return Object.assign({}, this.quiz[id]);
-    }
-  
-    getAll(){
-        return [...this.quiz];
-    }
-    
-    getAllCategories(){
-        return [...this.categories];
-    }
-
-    getAllCategoriesSorted(){
-        let temp = [...this.categories];
-
-        temp = temp.sort((a:string, b:string) =>{
-            if(a < b) { return -1; }
-            if(a > b) { return 1; }
-            return 0;
-        })
-
-        return temp;
-    }
-}
+    ["Geografía", "Historia Universal", "Español", "Matemáticas", "Arte"];
+*/

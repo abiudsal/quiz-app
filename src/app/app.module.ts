@@ -8,6 +8,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { QuizComponent } from './pages/quiz/quiz.component';
+import { CreateQuizComponent } from './pages/create-quiz/create-quiz.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { QuizComponent } from './pages/quiz/quiz.component';
     HomeComponent,
     CategoriesComponent,
     ErrorComponent,
-    QuizComponent
+    QuizComponent,
+    CreateQuizComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
