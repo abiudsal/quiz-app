@@ -50,13 +50,20 @@
                 {{quiz.title}} - <span class="category">{{quiz.category}}</span>
             </div>
 
-            <div class="result" >
-                {{hits}}/{{nAllQuestions}}
+            <div class="result-container" >
+                <div class="result">
+                    <div class="result-item">
+                        Obtuviste 
+                    </div>
+                    <div class="result-item">
+                        {{hits}} de {{nAllQuestions}}
+                    </div>                    
+                </div>
             </div>
             
             <div class="result-footer">
-                <button class="btn" (click)="restart()">Reiniciar</button>
-                <button class="btn" (click)="explore()">Explorar</button>
+                <button class="btn btn-explore" (click)="explore()">Explorar</button>
+                <button class="btn btn-restart" (click)="restart()">Reiniciar</button>
             </div>
         </div>
     </div>

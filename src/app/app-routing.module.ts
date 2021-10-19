@@ -12,7 +12,7 @@ const routes: Routes = [
     {path: "", component: HomeComponent},
     {path: "categorias", component: CategoriesComponent},
     {path: "quiz/:id", component: QuizComponent},
-    {path: "crear", component: CreateQuizComponent},
+    //{path: "crear", component: CreateQuizComponent},
     {path: "*", component: ErrorComponent},
   ]}
 ];
